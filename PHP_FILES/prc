@@ -1,0 +1,12 @@
+create Procedure insertblocklist (IN var varchar(10),IN var1 varchar(10))
+begin
+     delete from friendlist where PhoneNumber = var1 and FriendNumber= var ;
+end;
+ 
+ CREATE Trigger blocklisttrig 
+   after insert on blocklist 
+       for each row
+           begin
+                call insertblocklist(new.BlockedNumber,new.PhoneNumber);
+           end;
+

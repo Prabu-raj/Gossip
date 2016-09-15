@@ -1,0 +1,23 @@
+create procedure BlockList1234(IN val varchar(10))
+begin
+	SELECT Name
+			FROM userTable , blocklist
+			where  blocklist.PhoneNumber=val and blocklist.BlockedNumber=usertable.PhoneNumber;
+end;
+			
+			
+create procedure FavoritesProc111(IN val varchar(10))
+begin
+SELECT Name
+			FROM userTable , FriendList
+			WHERE Favorites = 1
+			AND FriendList.FriendNumber = userTable.PhoneNumber
+				AND FriendList.PhoneNumber = val;
+end;
+
+
+create procedure Proc()
+begin
+SELECT Name
+		from usertable;
+end;

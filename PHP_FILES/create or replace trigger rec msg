@@ -1,0 +1,8 @@
+create or replace trigger rec msg
+	after insert on FriendList 
+		for each row
+			when new.chat<>NULL
+					select chat,sentTime from FriendList where 
+						PhoneNumber = '{$_session['PhoneNumber']}'
+						
+
